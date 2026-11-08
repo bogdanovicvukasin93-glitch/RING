@@ -74,7 +74,7 @@ a:hover{color:#ebe5d8}
   </sc-if>
 
   <header id="top" data-screen-label="Hero" style="position:relative;height:100svh;min-height:560px;overflow:hidden">
-    <img src="assets/ring-hero.jpg" alt="Glavna fotografija: ring" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block">
+    <img src="ring-hero.jpg" alt="Glavna fotografija: ring" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block">
     <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,#0e0d0b00 35%,#0e0d0bee 100%)"></div>
     <div style="position:absolute;left:0;right:0;bottom:0;padding:0 clamp(20px,4vw,56px) clamp(32px,5vw,64px);display:flex;align-items:flex-end;justify-content:space-between;gap:32px;flex-wrap:wrap;pointer-events:none">
       <h1 style="margin:0;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(104px,24vw,380px);line-height:.8;letter-spacing:.01em;color:#ebe5d8">RING</h1>
@@ -87,7 +87,7 @@ a:hover{color:#ebe5d8}
   </header>
 
   <section data-screen-label="Neon" style="position:relative;height:clamp(320px,52vw,760px);overflow:hidden;background:#000">
-    <div style="position:absolute;inset:0;filter:grayscale(1) contrast(1.15)"><img src="assets/clanarine-bg.jpg" alt="Pozadina: članarine" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block"></div>
+    <div style="position:absolute;inset:0;filter:grayscale(1) contrast(1.15)"><img src="clanarine-bg.jpg" alt="Pozadina: članarine" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block"></div>
     <div style="position:absolute;inset:0;background:#c6a15b;mix-blend-mode:multiply;pointer-events:none"></div>
     <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,#c6a15b22 0%,#c6a15b00 60%);mix-blend-mode:screen;pointer-events:none"></div>
     <div style="position:absolute;inset:0;background:linear-gradient(180deg,#0e0d0b 0%,#0e0d0b00 18%,#0e0d0b00 78%,#0e0d0b 100%);pointer-events:none"></div>
@@ -125,7 +125,7 @@ a:hover{color:#ebe5d8}
   </section>
 
   <section id="probni" data-screen-label="Probni trening" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));align-items:stretch">
-    <div style="position:relative;min-height:clamp(300px,40vw,560px)"><img src="assets/probni-trening.webp" alt="Fotografija: bokser u akciji" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 37%;display:block"></div>
+    <div style="position:relative;min-height:clamp(300px,40vw,560px)"><img src="probni-trening.webp" alt="Fotografija: bokser u akciji" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 37%;display:block"></div>
     <div style="padding:clamp(40px,5vw,72px) clamp(20px,4vw,56px);display:flex;flex-direction:column;justify-content:center;gap:28px">
       <h2 style="margin:0;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(52px,9vw,150px);line-height:.88;letter-spacing:.03em;color:#ebe5d8">{{ t.trialH1 }}<br><span style="color:#c6a15b;animation:ringGlow 3.6s ease-in-out infinite">{{ t.trialH2 }}</span></h2>
       <p style="margin:-14px 0 0;font-size:clamp(16px,1.2vw,18px);line-height:1.6;font-weight:300;max-width:460px">{{ t.trialP }}</p>
@@ -317,11 +317,11 @@ class Component extends DCLogic {
       calcDurs: DURS.map(([m, d], i) => ({ m, popular: m === 6, unit: t.unit(m), disc: d ? '−' + (d * 100) + '%' : '', ...on(st.dur === i), pick: () => this.setState({ dur: i }) })),
       calcMonthly: fmt(monthly),
       calcNote: months === 1 ? t.noteOne : t.noteTotal + ' ' + fmt(monthly * months) + ' RSD · ' + t.noteSave + ' ' + fmt(pPrice * disc * months) + ' RSD',
-      slides: [0,1,2,3,4,5,6,7,0,1,2,3,4,5,6,7].map(k => ({ k, n: k + 1, src: 'assets/sala-' + (k + 1) + '-web.jpg' })),
+      slides: [0,1,2,3,4,5,6,7,0,1,2,3,4,5,6,7].map(k => ({ k, n: k + 1, src: 'sala-' + (k + 1) + '-web.jpg' })),
       trainers: [
-        { name: 'Marko Jovanović', src: 'assets/trener-1.jpg' },
-        { name: 'Jelena Nikolić', src: 'assets/trener-2.jpg' },
-        { name: 'Ana Stanković', src: 'assets/trener-3.jpg' }
+        { name: 'Marko Jovanović', src: 'trener-1.jpg' },
+        { name: 'Jelena Nikolić', src: 'trener-2.jpg' },
+        { name: 'Ana Stanković', src: 'trener-3.jpg' }
       ].map((x, i) => ({ ...x, role: t.roles[i] })),
       quotesLoop: [...t.quotes, ...t.quotes].map(([text, who]) => ({ text, who })),
       faqs: t.faq.map(([q, a], i) => {
