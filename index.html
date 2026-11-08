@@ -10,18 +10,7 @@
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
-<script src="./image-slot.js"></script>
-<meta name="ext-resource-dependency" content="assets/sala-1-web.jpg">
-<meta name="ext-resource-dependency" content="assets/sala-2-web.jpg">
-<meta name="ext-resource-dependency" content="assets/sala-3-web.jpg">
-<meta name="ext-resource-dependency" content="assets/sala-4-web.jpg">
-<meta name="ext-resource-dependency" content="assets/sala-5-web.jpg">
-<meta name="ext-resource-dependency" content="assets/sala-6-web.jpg">
-<meta name="ext-resource-dependency" content="assets/sala-7-web.jpg">
-<meta name="ext-resource-dependency" content="assets/sala-8-web.jpg">
-<meta name="ext-resource-dependency" content="assets/trener-1.jpg">
-<meta name="ext-resource-dependency" content="assets/trener-2.jpg">
-<meta name="ext-resource-dependency" content="assets/trener-3.jpg">
+
 <style>
 html,body{margin:0;background:#0e0d0b;color:#ebe5d8;font-family:'Barlow',sans-serif;-webkit-font-smoothing:antialiased}
 *{box-sizing:border-box}
@@ -85,7 +74,7 @@ a:hover{color:#ebe5d8}
   </sc-if>
 
   <header id="top" data-screen-label="Hero" style="position:relative;height:100svh;min-height:560px;overflow:hidden">
-    <image-slot id="hero-main" shape="rect" src="assets/ring-hero.jpg" placeholder="Glavna fotografija: ring"></image-slot>
+    <img src="assets/ring-hero.jpg" alt="Glavna fotografija: ring" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block">
     <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,#0e0d0b00 35%,#0e0d0bee 100%)"></div>
     <div style="position:absolute;left:0;right:0;bottom:0;padding:0 clamp(20px,4vw,56px) clamp(32px,5vw,64px);display:flex;align-items:flex-end;justify-content:space-between;gap:32px;flex-wrap:wrap;pointer-events:none">
       <h1 style="margin:0;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(104px,24vw,380px);line-height:.8;letter-spacing:.01em;color:#ebe5d8">RING</h1>
@@ -98,7 +87,7 @@ a:hover{color:#ebe5d8}
   </header>
 
   <section data-screen-label="Neon" style="position:relative;height:clamp(320px,52vw,760px);overflow:hidden;background:#000">
-    <div style="position:absolute;inset:0;filter:grayscale(1) contrast(1.15)"><image-slot id="neon-bg" shape="rect" src="assets/clanarine-bg.jpg" placeholder="Pozadina: članarine"></image-slot></div>
+    <div style="position:absolute;inset:0;filter:grayscale(1) contrast(1.15)"><img src="assets/clanarine-bg.jpg" alt="Pozadina: članarine" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block"></div>
     <div style="position:absolute;inset:0;background:#c6a15b;mix-blend-mode:multiply;pointer-events:none"></div>
     <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,#c6a15b22 0%,#c6a15b00 60%);mix-blend-mode:screen;pointer-events:none"></div>
     <div style="position:absolute;inset:0;background:linear-gradient(180deg,#0e0d0b 0%,#0e0d0b00 18%,#0e0d0b00 78%,#0e0d0b 100%);pointer-events:none"></div>
@@ -112,7 +101,7 @@ a:hover{color:#ebe5d8}
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:28px 16px">
       <sc-for list="{{ trainers }}" as="tr" hint-placeholder-count="3">
         <div style="display:flex;flex-direction:column;gap:14px">
-          <div style="position:relative;aspect-ratio:4/5"><image-slot id="trener-{{ $index }}" shape="rect" src="{{ tr.src }}" placeholder="Portret trenera"></image-slot></div>
+          <div style="position:relative;aspect-ratio:4/5"><img src="{{ tr.src }}" alt="Portret trenera" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block"></div>
           <div style="display:flex;flex-direction:column;gap:4px">
             <span style="font-family:'Bebas Neue',sans-serif;font-size:30px;line-height:1;color:#ebe5d8">{{ tr.name }}</span>
             <span style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#c6a15b">{{ tr.role }}</span>
@@ -129,14 +118,14 @@ a:hover{color:#ebe5d8}
     <div style="display:flex;gap:16px;width:max-content;animation:ringMarquee 90s linear infinite">
       <sc-for list="{{ slides }}" as="s" hint-placeholder-count="5">
         <div style="position:relative;width:clamp(240px,32vw,480px);aspect-ratio:4/5;flex-shrink:0">
-          <image-slot id="slajd-{{ s.k }}" shape="rect" src="{{ s.src }}" placeholder="Slika teretane {{ s.n }}"></image-slot>
+          <img src="{{ s.src }}" alt="Slika teretane {{ s.n }}" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block">
         </div>
       </sc-for>
     </div>
   </section>
 
   <section id="probni" data-screen-label="Probni trening" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));align-items:stretch">
-    <div style="position:relative;min-height:clamp(300px,40vw,560px)"><image-slot id="cta-bg" shape="rect" src="assets/program-boks.jpg" placeholder="Fotografija: bokser u akciji"></image-slot></div>
+    <div style="position:relative;min-height:clamp(300px,40vw,560px)"><img src="assets/probni-trening.webp" alt="Fotografija: bokser u akciji" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 37%;display:block"></div>
     <div style="padding:clamp(40px,5vw,72px) clamp(20px,4vw,56px);display:flex;flex-direction:column;justify-content:center;gap:28px">
       <h2 style="margin:0;font-family:'Bebas Neue',sans-serif;font-weight:400;font-size:clamp(52px,9vw,150px);line-height:.88;letter-spacing:.03em;color:#ebe5d8">{{ t.trialH1 }}<br><span style="color:#c6a15b;animation:ringGlow 3.6s ease-in-out infinite">{{ t.trialH2 }}</span></h2>
       <p style="margin:-14px 0 0;font-size:clamp(16px,1.2vw,18px);line-height:1.6;font-weight:300;max-width:460px">{{ t.trialP }}</p>
